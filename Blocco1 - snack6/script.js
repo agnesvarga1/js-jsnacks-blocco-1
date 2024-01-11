@@ -4,6 +4,7 @@
 
 let n = Number(prompt("Write a number?"));
 const limit = 99;
+document.writeln("<h2>B1 Snack </h2>");
 if (isNaN(n) || n > limit) {
   alert(
     `NOT a number try again and number can not be higher than ${limit} and can not be 0 or 1`
@@ -11,5 +12,5 @@ if (isNaN(n) || n > limit) {
   location.reload();
 } else
   for (let i = 1; i <= n; i++) {
-    console.log(`${i} ^ 3: ${Math.pow(i, 3)}`);
+    document.writeln(`<p>${i} ^ 3: ${Math.pow(i, 3)}</p>`);
   }
