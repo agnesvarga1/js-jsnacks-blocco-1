@@ -14,13 +14,16 @@ let inputNumber = Number(prompt("Write a number"));
 const maxLength = 10;
 const arrayOfNumbers = [];
 
-for (i = 0; i < 10; i++) {
+for (let i = 0; i < maxLength; i++) {
   if (isNaN(inputNumber)) {
     alert("NOT a number try again");
     inputNumber = Number(prompt("Write a number"));
   } else {
-    arrayOfNumbers.push(inputNumber);
-    inputNumber = Number(prompt("Write a number"));
+    if (arrayOfNumbers.length < maxLength) {
+      i = arrayOfNumbers.length;
+      arrayOfNumbers.push(inputNumber);
+      inputNumber = Number(prompt("Write a number"));
+    }
   }
 }
 
@@ -29,4 +32,5 @@ let sum = 0;
 for (let i = 0; i < arrayOfNumbers.length; i++) {
   sum = sum + arrayOfNumbers[i];
 }
+
 document.writeln(`<h2>Somma dei numeri: ${sum}</h2>`);
